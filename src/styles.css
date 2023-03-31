@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+/* https://api.publicapis.org/entries
+https://jsonplaceholder.typicode.com */
+/* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container">
+      <h1 style="color: white">DASHBOARD</h1>
+      <div *ngIf="message" style="position: absolute;
+      transform: translateX(50%); right: 50%; " class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Deleted!</strong> Succesfully.
+          <button (click)="remove()" type="button" class="btn-close" data-bs-dismiss="alert"
+              aria-label="Close"></button>
+      </div>
+  </div>
+</nav>
+<div class="container-fluid img" style="width: 100%;">
+  <div class="container pt-4">
+      <table class="table table-hover table-info table-striped  ">
+          <thead class="table-dark">
+              <tr>
+                  <th scope="col">User Id</th>
+                  <th scope="col">FirstName</th>
+                  <th scope="col">LastName</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">EPPCount</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Action</th>
+                 </tr>
+          </thead>
+          <tbody class="table-striped">
+              <tr *ngFor="let item of items">
+                  <td>{{ item.UserID}}</td>
+                  <td>{{ item.FirstName }}</td>
+                  <td>{{ item.LastName }}</td>
+                  <td>{{ item.EmailID}}</td>
+                  <td>{{ item.EPPCount }}</td>
+                  <td>{{ item.MobileNo}}</td>
+                  <td>
+                      <a href="#" [routerLink]="[ '/view/', item.UserID]" class="btn btn-primary mx-3 ">View</a>
+                      <button type="button" (click)="deletePost(item.UserID , item.firstname)"
+                          class="btn btn-danger mx-3 ">Delete</button>
+                  </td>
+              </tr>
+              </tbody>
+      </table>
+  </div>
+</div>
